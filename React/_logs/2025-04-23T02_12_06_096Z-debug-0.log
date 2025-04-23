@@ -1,0 +1,31 @@
+0 verbose cli C:\nvm4w\nodejs\node.exe C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.3.0
+2 info using node@v18.20.8
+3 warn cli npm v11.3.0 does not support Node.js v18.20.8. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+4 silly config load:file:C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\npmrc
+5 silly config load:file:d:\DigiTechSolutions\22april_task_CRUD\server\.npmrc
+6 silly config load:file:C:\Users\LENOVO\.npmrc
+7 silly config load:file:d:\DigiTechSolutions\22april_task_CRUD\server\etc\npmrc
+8 verbose title npm ls
+9 verbose argv "ls" "--omit" "dev" "--package-lock-only" "--json" "--prefix" "d:/DigiTechSolutions/22april_task_CRUD/server"
+10 verbose logfile logs-max:10 dir:d:\DigiTechSolutions\22april_task_CRUD\React\_logs\2025-04-23T02_12_06_096Z-
+11 verbose logfile d:\DigiTechSolutions\22april_task_CRUD\React\_logs\2025-04-23T02_12_06_096Z-debug-0.log
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 verbose stack Error: loadVirtual requires existing shrinkwrap file
+14 verbose stack     at Arborist.loadVirtual (C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\load-virtual.js:51:18)
+14 verbose stack     at async LS.initTree (C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\lib\commands\ls.js:213:18)
+14 verbose stack     at async LS.exec (C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\lib\commands\ls.js:73:18)
+14 verbose stack     at async Npm.exec (C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\lib\npm.js:208:9)
+14 verbose stack     at async module.exports (C:\Users\LENOVO\AppData\Roaming\npm\node_modules\npm\lib\cli\entry.js:67:5)
+15 error code ENOLOCK
+16 error ls This command requires an existing lockfile.
+17 error ls Try creating one first with: npm i --package-lock-only
+18 error ls Original error: loadVirtual requires existing shrinkwrap file
+19 verbose cwd d:\DigiTechSolutions\22april_task_CRUD
+20 verbose os Windows_NT 10.0.22631
+21 verbose node v18.20.8
+22 verbose npm  v11.3.0
+23 verbose exit 1
+24 verbose code 1
+25 error A complete log of this run can be found in: d:\DigiTechSolutions\22april_task_CRUD\React\_logs\2025-04-23T02_12_06_096Z-debug-0.log
