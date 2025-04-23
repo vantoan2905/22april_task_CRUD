@@ -1,25 +1,49 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { testConnection } from './database/connection';
-import user_router from './routes/user.Router';
 import * as dotenv from 'dotenv';
-import health_check_router from './routes/health_check.router';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import  express from 'express';
+import router from './routes';
+// dotenv.config();
+
+// async function bootstrap() {
+//   try {
+//     await testConnection();
+
+//     const server = express();
+//     server.use(express.json()); 
+
+//     server.use('/api/v1/user', user_router);
+//     server.use('/api/v1/health_check', health_check_router);
+
+//     const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
+
+//     await app.listen(3000);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// bootstrap();
+
 
 dotenv.config();
 
 async function bootstrap() {
   try {
     await testConnection();
-    const app = await NestFactory.create(AppModule);
 
-    app.use('/api/v1/user', user_router);
-    app.use('/api/v1/health_check', health_check_router);
+    const server = express();
+    server.use(express.json());
+
+    server.use('/api/v1', router);
+    const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
 
     await app.listen(3000);
   } catch (err) {
     console.log(err);
   }
-
 }
 
 bootstrap();

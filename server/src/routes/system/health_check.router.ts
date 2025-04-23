@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
-import { successResponse, errorResponse } from '../utils/response';
+import { successResponse, errorResponse } from '../../utils/response';
 // import { sequelize } from '../database/connection';
-import { logger } from '../middlewares/logger';
+import { logger } from '../../middlewares/logger';
 const health_check_router = Router();
 
 health_check_router.get('/', async (req: Request, res: Response) => {

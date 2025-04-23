@@ -1,19 +1,22 @@
-// // this is code for user repository
-// import { User } from '@/models/User/user.Model';
-// import sequelize from '@/database/connection';
+// /src/repositories/user/user.repositories.ts
+import sequelize from "../../database/connection";
+import { User } from "../../models/User/user.Model";
 
+class UserRepository {
 
+  async create(username: string, password: string, email: string) {
+    const user = await User.create({ username, password, email });
+    return user;
+  }
+  async findByEmail(email: string) {
+    return await User.findOne({ where: { email } });
+  }
+  async findByUsername(username: string) {
+    return await User.findOne({ where: { username } });
+  }
+  async fildAll() {
+    return await User.findAll();
+  }
+}
 
-// const userModel = User(sequelize);
-
-// export class UserRepository {
-//     async findAll() {
-//         return await userModel.findAll();
-//     }
-//     async findById(id: number) {
-//         return await userModel.findByPk(id);
-//     }
-//     async createUser(data: any) {
-//         return await userModel.create(data);
-//     }
-// }
+export default new UserRepository();
